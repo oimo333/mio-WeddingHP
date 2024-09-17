@@ -990,8 +990,13 @@ iframe {
   gap: 2rem 1.5rem;
   grid-template-columns: repeat(1, 1fr);
   text-align: center;
-
 } */
-/* .resizeimage img {
+.resizeimage img {
   width: 70%;
-} */
+}
+.wrapper9 {
+  margin: auto;
+  padding: auto;
+  width: 50%;
+  height: 40%;
+}
