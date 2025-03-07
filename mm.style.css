@@ -467,7 +467,18 @@ div#mainimage {
   padding-top: 180px;
   font-size: 120px;
   font-weight: normal;
+  /* アニメーション用のスタイルを追加 */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s, transform 1s;
 }
+
+/* アニメーション用のクラス */
+.header__title.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .header__title__sub {
   word-spacing: 4px;
 }
@@ -515,6 +526,9 @@ div#mainimage {
   padding-bottom: 80px;
   text-align: left;
   line-height: 1;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.4s, transform 0.4s;
 }
 .work__content:nth-of-type(1) {
   order: 1;
@@ -528,6 +542,26 @@ div#mainimage {
 }
 .work__content:nth-of-type(4) {
   order: 4;
+}
+
+/* アニメーション表示用クラス */
+.work__content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 順番に表示させる遅延時間 */
+.work__content:nth-child(1).fade-in {
+  transition-delay: 0.05s;
+}
+.work__content:nth-child(2).fade-in {
+  transition-delay: 0.15s;
+}
+.work__content:nth-child(3).fade-in {
+  transition-delay: 0.25s;
+}
+.work__content:nth-child(4).fade-in {
+  transition-delay: 0.35s;
 }
 
 .work__content__image {
@@ -637,9 +671,9 @@ div#left {
   width: auto;
   height: auto;
   background-color: #fff;
-  float: left;
-  margin-right: 20px;
+  margin: 0;
   padding: 10px;
+  flex-shrink: 0;
 }
 
 div#left h2,
@@ -691,7 +725,7 @@ div#left2 {
 div#right {
   width: 365px;
   height: 198px;
-  float: left;
+  flex-shrink: 0;
 }
 
 div#right ul li {
@@ -999,4 +1033,15 @@ iframe {
   padding: auto;
   width: 50%;
   height: 40%;
+}
+
+/* 新しいコンテナのスタイル */
+.history-menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
